@@ -1,4 +1,5 @@
 import entitis.Esercizio1;
+import entitis.esercizio2.Sim;
 import entitis.esercizio3.Articoli;
 import entitis.esercizio3.Cliente;
 
@@ -21,6 +22,34 @@ public class Main {
             break;
             case 2:
                 //ESERCIZIO 2
+                Sim sim = new Sim("3278689809");
+                sim.stamp();
+                System.out.println("Vuoi effettuare una ricarica?: Si=1/No=2");
+                int y = sc.nextInt();
+                if (y == 1) {
+                    System.out.println("Seleziona il formato ricarica da effettuare: 5/10/20/50 euro ");
+                int credit = sc.nextInt();
+                switch (credit){
+                    case 5:
+                        sim.addCredit(5);
+                    sim.stamp();
+                    break;
+                    case 10:
+                        sim.addCredit(10);
+                        sim.stamp();
+                        break;
+                    case 20:
+                        sim.addCredit(20);
+                        sim.stamp();
+                        break;
+                    case 50:
+                        sim.addCredit(50);
+                        sim.stamp();
+                        break;
+                    default:
+                        System.out.println("Errore");
+                }
+        }
                 break;
                 case 3:
                     //ESERCIZIO 3
@@ -66,5 +95,6 @@ public class Main {
             default:
                 System.out.println("Seleziona una scelta valida");
         }
+        sc.close();
     }
 }
